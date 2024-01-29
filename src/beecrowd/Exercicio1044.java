@@ -1,3 +1,5 @@
+package beecrowd;
+
 import java.util.Scanner;
 
 public class Exercicio1044 {

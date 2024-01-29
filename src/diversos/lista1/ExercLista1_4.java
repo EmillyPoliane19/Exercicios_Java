@@ -1,4 +1,4 @@
-package diversos;
+package diversos.lista1;
 
 import java.util.Scanner;
 

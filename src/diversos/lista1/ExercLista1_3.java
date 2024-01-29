@@ -1,4 +1,4 @@
-package diversos;
+package diversos.lista1;
 
 import java.util.Scanner;
 /**Escreva um programa que leia cinco valores fornecidos em variáveis diferente

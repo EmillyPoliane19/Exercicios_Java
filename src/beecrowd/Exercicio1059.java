@@ -1,3 +1,5 @@
+package beecrowd;
+
 public class Exercicio1059 {
     public static void main(String[] args) {
         //Faça um programa que mostre os números pares entre 1 e 100, inclusive

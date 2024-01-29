@@ -1,4 +1,4 @@
-package diversos;
+package diversos.lista2;
 
 import java.util.Scanner;
 /**Construir um programa para calcular e exibir a média ponderada de 4 números dados pelo usuário,

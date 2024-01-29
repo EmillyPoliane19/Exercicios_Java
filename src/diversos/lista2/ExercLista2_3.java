@@ -1,4 +1,4 @@
-package diversos;
+package diversos.lista2;
 
 import java.util.Scanner;
 /** Construir um programa para calcular a o IMC de uma pessoa tendo como entradas a altura e massa de uma pessoa.
