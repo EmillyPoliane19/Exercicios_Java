@@ -33,10 +33,51 @@ public class Contato {
                 return "Contato adicionado!";
             }
         }
-        return null;
+        return "A agenda está cheia!";
     }
 
     String status () {
         return "Nome: " + nome + "\nNúmero: " + numero + "\nEmail: " + email + "\n";
+    }
+
+    boolean verificarDigito (String numero){
+        int contagemLetra = 0;
+        for (int i = 0; i < numero.length(); i++) {
+            char letra = numero.charAt(i);
+
+            if(!Character.isDigit(letra)) {
+                contagemLetra ++;
+            }
+        }
+
+        if (contagemLetra > 0){
+            return false;
+        }
+
+        return true;
+    }
+    boolean verificarCaracter (String palavra){
+        int contagemDigito = 0;
+
+        for (int i = 0; i < palavra.length(); i++) {
+            char letra = palavra.charAt(i);
+            if(Character.isDigit(letra)) {
+                contagemDigito ++;
+            }
+        }
+
+        if (contagemDigito > 0){
+            return false;
+        }
+
+        return true;
+    }
+
+    boolean verificarEmail(String email) {
+        String teste = "@";
+        if (email.contains(teste)) {
+            return true;
+        }
+        return false;
     }
 }

@@ -33,19 +33,60 @@ public class Agenda {
                 }
 
             } if (opcao == 2) {
-                System.out.print("Nome:");
-                String nome = sc.nextLine();
+                boolean i = false;
+                Contato verificar = new Contato();
 
-                System.out.print("Telefone:");
-                String numero = sc.nextLine();
+                String nome = "";
+                String numero = "";
+                String email = "";
 
-                System.out.print("Email:");
-                String email = sc.nextLine();
+                while (i == false) {
+
+                    System.out.print("Nome:");
+                    nome = sc.nextLine();
+                    boolean testeNome = verificar.verificarCaracter(nome);
+
+                    if (!testeNome) {
+                        System.out.println("Hmmm...Parece que o nome possuie números, escreva novamente:");
+                        nome = sc.nextLine();
+                        testeNome = verificar.verificarCaracter(nome);
+                    }
+
+                    System.out.print("Telefone:");
+                    numero = sc.nextLine();
+                    boolean testeNumero = verificar.verificarDigito(numero);
+
+                    if (!testeNumero) {
+                        System.out.println("Hmmm...Parece que o numero possuie letras, escreva novamente:");
+                        numero = sc.nextLine();
+                        testeNumero = verificar.verificarDigito(numero);
+                    }
+
+                    System.out.print("Email:");
+                    email = sc.nextLine();
+                    boolean testeEmail = verificar.verificarEmail(email);
+
+                    if (!testeEmail) {
+                        System.out.println("Hmmm...Parece que o email não possuie @, escreva novamente:");
+                        email = sc.nextLine();
+                        testeEmail = verificar.verificarEmail(email);
+                    }
+
+                    if (testeNome && testeNumero && testeEmail) {
+                        i = true;
+                        System.out.println("Verificando...");
+
+                    } else if (!i) {
+                        System.out.println("Hmmm...Parece que tem algo errado, tente novamente!");
+                    }
+
+                }
 
                 Contato pessoa = new Contato(nome, numero, email);
-                String adicionar = pessoa.adicionarContato(agenda,pessoa);
 
+                String adicionar = pessoa.adicionarContato(agenda, pessoa);
                 System.out.println(adicionar);
+
                 continue;
             }
             sc.nextLine();
